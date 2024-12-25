@@ -32,7 +32,8 @@ html,
 
     .swiper-slide img {
       display: block;
-      width: 95%;
+      width: auto;
+      max-width: 95%;
       height: auto;
       max-height: 95%;
       object-fit: contain;
