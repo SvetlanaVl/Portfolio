@@ -134,6 +134,14 @@ nav {
         display: none;
         }
 
-        .swiper-pagination-bullet-active::after {
-          background: red;
-      }
+        
+        .swiper-pagination {
+          background-color: rgb(214, 214, 214);
+        }
+
+        span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+          background-color: red;
+          opacity: 1;
+        }
+        
+        
