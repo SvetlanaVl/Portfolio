@@ -14,6 +14,61 @@ html,
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+    .header {
+  background-color: #460000;
+}
+nav {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0 20px;
+  line-height: 50px;
+  transition: 0.3s;
+}
+.link {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.5s;
+}
+.link:hover {
+  color: rgb(0, 0, 0);
+}
+.nav-list a:hover {
+  color: #7c0f0f;
+}
+.nav-list .link {
+  border: 3px solid #fff;
+  padding: 5px;
+  border-radius: 10%;
+  box-shadow: inset 0px 0px 20px 5px rgb(10, 10, 10);
+}
+.main {
+  width: 100%;
+  height: 100%;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  
+}
+.section {
+  
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  align-content: center;
+}
+
     .swiper {
       width: 100%;
       height: 100%;
@@ -33,20 +88,52 @@ html,
     .swiper-slide img {
       display: block;
       width: auto;
-      max-width: 95%;
+      max-width: 90%;
       height: auto;
       max-height: 95%;
       object-fit: contain;
-      box-shadow: 0px 0px 60px 10px rgb(214, 214, 214);
+      box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
       left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
     }
 
     .swiper {
       margin-left: auto;
       margin-right: auto;
     }
+
+
+    .swiper-button-next {
+      background-image: url("img/next.png");
+      width: 58px;
+      height: 58px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      }
+    
+      .swiper-button-next::after {
+      display: none;
+      }
+
+      .swiper-button-prev {
+        background-image: url("img/pref.png");
+        width: 58px;
+        height: 58px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        }
+      
+        .swiper-button-prev::after {
+        display: none;
+        }
+
+        .swiper-pagination-bullet-active::after {
+          background: red;
+      }
