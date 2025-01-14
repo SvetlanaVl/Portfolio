@@ -8,6 +8,8 @@ const popUpReview = document.querySelector('.pop-up-review');
 const popUpReviewScreenDimming = document.querySelector('.pop-up-review-screen-dimming');
 const popUpReviewImg = document.querySelector('.pop-up-review-img');
 
+
+
 function seeNameList() {
   for (let i = 0; i < imgsData[0].length; i++) {
     
@@ -27,6 +29,14 @@ function seeNameList() {
     swiperSlide.append(swiperSlideImg);
 
     swiperWrapper.append(swiperSlide);
+
+    //не копировать картинку
+
+    swiperSlideImg.oncontextmenu = function()
+    {
+      return false;
+    }
+
 
   }
 }
@@ -69,7 +79,7 @@ imgs.forEach(img => {
 
         const popupImg = document.createElement("img");
 
-        popupImg.classList.add("swiper-slide-img");
+        popupImg.classList.add("popup-img");
 
         popupImg.src = imgsData[0][i].image;
 
@@ -86,6 +96,13 @@ imgs.forEach(img => {
         popUpReviewImg.classList.add('pop-up-review-img-active');
 
         document.body.style.overflow = 'hidden';
+
+        //не копировать картинку
+
+        popupImg.oncontextmenu = function()
+    {
+      return false;
+    }
       }
     }
   });
