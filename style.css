@@ -1,33 +1,55 @@
 html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+body {
+  position: relative;
+  height: 100%;
+}
 
-    body {
-      /*background: #eee;*/
-      background-color: #000202;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
+body {
+  background-color: #000202;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  /*не копировать текст*/
+  -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none;
+}
 
-      -ms-user-select: none; 
-		-moz-user-select: none; 
-		-webkit-user-select: none; 
-		user-select: none;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
-    .header {
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+.header {
   background-color: #460000;
 }
-nav {
+
+.container {
   max-width: 1000px;
   margin: 0 auto;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-header {
+  align-items: center;
 }
 .nav-list {
   display: flex;
@@ -56,6 +78,7 @@ nav {
   border-radius: 10%;
   box-shadow: inset 0px 0px 20px 5px rgb(10, 10, 10);
 }
+
 .main {
   width: 100%;
   height: 100%;
@@ -65,14 +88,14 @@ nav {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  
 }
+
 .section {
-  
   margin: 0 auto;
   width: 100%;
   max-width: 1440px;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   align-content: center;
 }
 
@@ -81,158 +104,191 @@ nav {
 .section-srok,
 .section-zakaz {
   color: white;
+  padding: 10px;
 }
 
 .swiper-container {
   display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-    .swiper {
-      width: 100%;
-      max-width: 700px;
-      height: 90%;
-    }
+.swiper {
+  width: 100%;
+  max-width: 700px;
+  height: 90%;
+}
 
-    
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /*background: #fff;*/
+  background-color: #000202;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      /*background: #fff;*/
-      background-color: #000202;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
+.swiper-slide img {
+  display: block;
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 95%;
+  object-fit: contain;
+  box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
 
-    .swiper-slide img {
-      display: block;
-      width: auto;
-      max-width: 90%;
-      height: auto;
-      max-height: 95%;
-      object-fit: contain;
-      box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
-      position: relative;
-      top: 50%;
-      transform: translate(0, -50%);
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-    }
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .swiper {
-      margin-left: auto;
-      margin-right: auto;
-    }
+.swiper-button-next {
+  background-image: url("img/next.png");
+  width: 58px;
+  height: 58px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 
+.swiper-button-next::after {
+display: none;
+}
 
-    .swiper-button-next {
-      background-image: url("img/next.png");
-      width: 58px;
-      height: 58px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      }
-    
-      .swiper-button-next::after {
-      display: none;
-      }
+.swiper-button-prev {
+  background-image: url("img/pref.png");
+  width: 58px;
+  height: 58px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 
-      .swiper-button-prev {
-        background-image: url("img/pref.png");
-        width: 58px;
-        height: 58px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        }
-      
-        .swiper-button-prev::after {
-        display: none;
-        }
+.swiper-button-prev::after {
+display: none;
+}
 
-        span.swiper-pagination-bullet.swiper-pagination-bullet {
-          background-color: rgb(214, 214, 214);
-          opacity: 1;
-        }
+span.swiper-pagination-bullet.swiper-pagination-bullet {
+  background-color: rgb(214, 214, 214);
+  opacity: 1;
+}
 
-        span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-          background-color: #460000;
-          opacity: 1;
-        }
-        
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #460000;
+  opacity: 1;
+}
 
-        .pop-up-review-screen-dimming {
-          width: 100vw;
-          height: 100vh;
-          background-color: rgba(0, 0, 0, 0.8);
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: 22;
-          transform: translateY(-100%);
-        }
-        .pop-up-review {
-          position: fixed;
-          left: 50%;
-          top: 50%;
-          width: 0px;
-          height: auto;
-          max-height: 95%;
-          background-color: #000202;
-          display: flex;
-          justify-content: center;
-          gap: 11px;
-          align-items: flex-start;
-          z-index: 23;
-          transform: translateY(-300%);
-          transition: all 0.5s linear 0.2s;
-        }
-        .pop-up-review-active {
-          transform: translate(-50%, -50%);
-        }
-        .pop-up-review-active-size {
-          width: auto;
-          max-width: 95%;
-        }
-        .pop-up-review-screen-dimming-active {
-          transform: translateY(0);
-          cursor: pointer;
-        }
-        .container-popup {
-          width: auto;
-          max-width: 100%;
-          height: auto;
-          max-height: 100%;
-        }
-        .container-popup-background {
-          width: auto;
-          max-width: 100%;
-          height: auto;
-          max-height: 100%;
-          overflow: hidden;
-          box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
-        }
+.pop-up-review-screen-dimming {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 22;
+  transform: translateY(-100%);
+}
 
-        .swiper-slide-img {
-          width: -webkit-fill-available;
-        }
-        
-        .pop-up-review-img {
-          width: 0px;
-        }
+.pop-up-review {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 0px;
+  height: auto;
+  max-height: 95%;
+  background-color: #000202;
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  align-items: flex-start;
+  z-index: 23;
+  transform: translateY(-300%);
+  transition: all 0.5s linear 0.2s;
+}
 
-        .pop-up-review-img-active {
-          position: absolute;
-          top: 2%;
-          right: 1%;
-          width: 14px;
-          cursor: pointer;
-        }
+.pop-up-review-active {
+  transform: translate(-50%, -50%);
+}
+
+.pop-up-review-active-size {
+  width: auto;
+  max-width: 90%;
+}
+
+.pop-up-review-screen-dimming-active {
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.container-popup {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.container-popup-background {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
+}
+
+.swiper-slide-img {
+  width: -webkit-fill-available;
+}
+
+.pop-up-review-img {
+  width: 0px;
+}
+
+.pop-up-review-img-active {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  width: 33px;
+  cursor: pointer;
+}
+
+.popup-img {
+  width: -webkit-fill-available;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 25px;
+  }
+  
+  h2 {
+    font-size: 15px;
+  }
+  
+  h3 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .swiper-slide {
+    height: auto;
+    max-height: 95%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+

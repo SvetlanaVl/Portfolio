@@ -1,5 +1,5 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-import imgsData from "./imgs.js";
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import imgsData from './imgs.js';
 
 
 const swiperWrapper = document.querySelector('.swiper-wrapper');
@@ -8,22 +8,19 @@ const popUpReview = document.querySelector('.pop-up-review');
 const popUpReviewScreenDimming = document.querySelector('.pop-up-review-screen-dimming');
 const popUpReviewImg = document.querySelector('.pop-up-review-img');
 
-
-
 function seeNameList() {
   for (let i = 0; i < imgsData[0].length; i++) {
-    
-    console.log(imgsData[0][i].name)
-    const swiperSlide = document.createElement("div");
 
-    swiperSlide.classList.add("swiper-slide");
+    const swiperSlide = document.createElement('div');
 
-    const swiperSlideImg = document.createElement("img");
+    swiperSlide.classList.add('swiper-slide');
 
-    swiperSlideImg.classList.add("swiper-slide-img");
-    
+    const swiperSlideImg = document.createElement('img');
+
+    swiperSlideImg.classList.add('swiper-slide-img');
+
     swiperSlideImg.src = imgsData[0][i].image;
-    
+
     swiperSlideImg.alt = imgsData[0][i].name;
 
     swiperSlide.append(swiperSlideImg);
@@ -36,37 +33,37 @@ function seeNameList() {
     {
       return false;
     }
-
-
   }
 }
+
 seeNameList();
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
 
+const swiperPagination = document.querySelector('.swiper-pagination');
+
+window.addEventListener('resize',(e) => {
+  const widthW= document.body.clientWidth;
+  if (widthW <= 385) {
+    swiperPagination.style.top = '90%';
+  } else {
+    swiperPagination.style.top = '';
+  }
+});
 
 const imgs = document.querySelectorAll('.swiper-slide-img');
-
-const closeMenu = () => {
-  console.log('yes');
-};
-
-for (let i = 0; i < imgs.length; i += 1) {
-  imgs[i].addEventListener('click', closeMenu);
-}
-
 
 imgs.forEach(img => {
   img.addEventListener('click', (e) => {
@@ -75,11 +72,10 @@ imgs.forEach(img => {
     for (let i = 0; i < imgsData[0].length; i++) {
 
       if (id === imgsData[0][i].name) {
-        console.log('Great!')
 
-        const popupImg = document.createElement("img");
+        const popupImg = document.createElement('img');
 
-        popupImg.classList.add("popup-img");
+        popupImg.classList.add('popup-img');
 
         popupImg.src = imgsData[0][i].image;
 
@@ -99,16 +95,15 @@ imgs.forEach(img => {
 
         //не копировать картинку
 
-        popupImg.oncontextmenu = function()
-    {
-      return false;
-    }
+        popupImg.oncontextmenu = function() {
+          return false;
+        }
       }
     }
   });
 });
 
-function sayHello() {
+function closeImg() {
   containerPopupContent.innerHTML = '';
   popUpReview.classList.remove('pop-up-review-active-size');
 }
@@ -118,7 +113,7 @@ const closeReviews = () => {
   popUpReviewScreenDimming.classList.remove('pop-up-review-screen-dimming-active');
   popUpReviewImg.classList.remove('pop-up-review-img-active');
   document.body.style.overflow = '';
-  setTimeout(sayHello, 500);
+  setTimeout(closeImg, 500);
 };
 
 popUpReviewImg.addEventListener('click', closeReviews);
